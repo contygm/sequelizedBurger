@@ -30,11 +30,11 @@ router.post('/burgers/insert', function(req, res){
 router.put('/burgers/update/:id', function(req, res){
 	var condition = req.params.id;
 
-	burger.findOne({where: {id = condition}})
+	burger.update({where: {id = condition}, devoured: true;})
 	
 	.then(function(burger){
 		//TODO: set devoured to true, find function
-		devoured: true;
+		
 
 		.then(function(daBurg){
 			res.redirect('/burgers');
