@@ -15,12 +15,14 @@ router.get('/burgers', function (req, res) {
 	
 });
 
-// TODO: insert
 router.post('/burgers/insert', function(req, res){
 	var newName = req.body.burger_name;
 
-	// TODO: find right function
-	burger.insertOne(['burger_name'], function(){
+	
+	burger.upsert({burger_name: newName})
+	
+	.then(function(burger){
+
 		res.redirect('/burgers');
 	})	
 })
@@ -28,10 +30,10 @@ router.post('/burgers/insert', function(req, res){
 router.put('/burgers/update/:id', function(req, res){
 	var condition = req.params.id;
 
-	burger.findOne({where: {id = condition}}
+	burger.findOne({where: {id = condition}})
 	
 	.then(function(burger){
-		//TODO: set devoured to true
+		//TODO: set devoured to true, find function
 		devoured: true;
 
 		.then(function(daBurg){
