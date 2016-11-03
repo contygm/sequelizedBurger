@@ -27,3 +27,9 @@ var PORT = 3000;
 app.listen(process.env.PORT || PORT, function () {
 	console.log('App listening on PORT ' + PORT);
 });
+
+
+
+//sequelize model:create --name Employee --attributes "fullName:[type:string], role:[type:string]"
+
+

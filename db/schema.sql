@@ -10,4 +10,4 @@ CREATE TABLE burgers
 	PRIMARY KEY (id)
 );
 
---sequelize model:create --name burgers --attributes "burgerName:[type:string], devoured: [type:string, default: false], entryDate:[type:date]"
+--sequelize model:create --name burgers --attributes "burgerName:[type:string],devoured: [type:BOOLEAN], entryDate:[type:date]"
