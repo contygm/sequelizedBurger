@@ -7,11 +7,12 @@ router.get('/', function (req, res) {
 });
 
 router.get('/burgers', function (req, res) {
-	burger.selectAll(function(data) {
-		var burgObj = { burgers: data };
-		
+	return burger.findAll()
+	
+	.then(function(buger)){
 		res.render('index', burgObj);
-	});
+	}			
+	
 });
 
 router.post('/burgers/insert', function(req, res){
@@ -21,11 +22,20 @@ router.post('/burgers/insert', function(req, res){
 })
 
 router.put('/burgers/update/:id', function(req, res){
-	var condition = 'id = ' + req.params.id;
+	var condition = req.params.id;
 
-	burger.updateOne({devoured: true}, condition, function(){
-		res.redirect('/burgers');
+	burger.findOne({where: {id = condition}}
+	
+	.then(function(burger){
+		//TODO: set devoured to true
+		devoured: true;
+		
+		.then(function(daBurg){
+			res.redirect('/burgers');
+		})
 	})
+
+
 }) 
 
 module.exports = router;
