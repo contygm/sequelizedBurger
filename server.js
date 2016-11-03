@@ -1,8 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
 var app = express();
+
+// NEW
+var models  = require('./models');
+
+models.sequelize.sync();
+//
 
 app.use(express.static(process.cwd() || __dirname + '/public'));
 
@@ -29,7 +34,5 @@ app.listen(process.env.PORT || PORT, function () {
 });
 
 
-
-//sequelize model:create --name Employee --attributes "fullName:[type:string], role:[type:string]"
 
 

@@ -1,10 +1,10 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
     var burgers = sequelize.define('burgers', {
-          burgerName: Sequelize.STRING,
-            devoured: { type: Sequelize.BOOLEAN, 
+          burger_name: DataTypes.STRING,
+            devoured: { type: DataTypes.BOOLEAN, 
               defaultValue: false},
-            entryDate: { type: Sequelize.DATE, 
+            entryDate: { type: DataTypes.DATE, 
               defaultValue: Sequelize.NOW }
             }, {
               classMethods: {
@@ -15,3 +15,7 @@ module.exports = function(sequelize, DataTypes) {
             });
           return burgers;
         };
+
+
+//sequelize model:create --name burgers --attributes "burgerName:string,
+//devoured:BOOLEAN, entryDate:date"
