@@ -8,9 +8,9 @@ router.get('/', function (req, res) {
 });
 
 router.get('/burgers', function (req, res) {
-	var allBurgers = { burgers: data };
-
+	
 	burger.findAll({}, function(data){
+		var allBurgers = { burgers: data };
 		res.render('index', allBurgers);
 	})
 
@@ -19,6 +19,7 @@ router.get('/burgers', function (req, res) {
 router.post('/burgers/insert', function(req, res){	
 
 	burger.create({burger_name: req.body.burger_name})
+	
 	.then(function(){
 		res.redirect('/burgers');
 	})
@@ -26,11 +27,17 @@ router.post('/burgers/insert', function(req, res){
 
 // TODO
 router.put('/burgers/update/:id', function(req, res){
-	var condition = 'id = ' + req.params.id;
+	var id = req.params.id;
 
-	burger.updateOne({devoured: true}, condition, function(){
-		res.redirect('/burgers');
+	burger.update({
+		devoured: true }, {
+		fields: ['title']
+		where: {id: id}
 	})
+
+	.then(function(data){
+		res.redirect('/burgers');
+	})		
 }) 
 
 module.exports = router;
