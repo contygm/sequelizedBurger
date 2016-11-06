@@ -2,9 +2,8 @@ var express = require('express');
 var router = express.Router();
 var burger = require('../models')['Burger'];
 
-var sequelizeConnection = models.sequelize;
-
-sequelizeConnection.sync()
+var models = require('../models');
+models.sequelize.sync();
 
 router.get('/', function (req, res) {
 	res.redirect('/burgers');
