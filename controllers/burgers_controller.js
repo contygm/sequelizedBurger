@@ -7,7 +7,6 @@ router.get('/', function (req, res) {
 	res.redirect('/burgers');
 });
 
-// TODO
 router.get('/burgers', function (req, res) {
 	var allBurgers = { burgers: data };
 
@@ -17,11 +16,12 @@ router.get('/burgers', function (req, res) {
 
 });
 
-// TODO
-router.post('/burgers/insert', function(req, res){
-	burger.insertOne(['burger_name'], [req.body.burger_name], function(){
+router.post('/burgers/insert', function(req, res){	
+
+	burger.create({burger_name: req.body.burger_name})
+	.then(function(){
 		res.redirect('/burgers');
-	})	
+	})
 })
 
 // TODO
