@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var burger = require('../models')['Burger'];
+var model = require('../models');
+
+model.burger.sync();
 
 router.get('/', function (req, res) {
 	res.redirect('/burgers');
