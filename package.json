@@ -19,6 +19,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/contygm/sequelizedBurger/issues"
+  }, 
+  "engines": {
+    "npm": "2.15.9"
   },
   "homepage": "https://github.com/contygm/sequelizedBurger#readme",
   "dependencies": {
