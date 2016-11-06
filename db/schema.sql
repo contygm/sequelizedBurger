@@ -10,3 +10,5 @@ CREATE TABLE burgers
     createdAt TIMESTAMP NOT NULL,
 	PRIMARY KEY(id)
 );
+
+sequelize model:create --name Burger —attributes "burger_name:string, devoured:boolean, uniformColor:string, uniformNumber:string"
