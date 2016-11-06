@@ -2,7 +2,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Burger = sequelize.define('Burger', {
     burger_name: DataTypes.STRING,
-    devoured: DataTypes.BOOLEAN
+    devoured: {DataTypes.BOOLEAN, 
+      defaultValue: true}
   }, {
     classMethods: {
       associate: function(models) {
@@ -12,3 +13,6 @@ module.exports = function(sequelize, DataTypes) {
   });
   return Burger;
 };
+
+
+//sequelize model:create --name Burger --attributes "burger_name:string, devoured:boolean"
