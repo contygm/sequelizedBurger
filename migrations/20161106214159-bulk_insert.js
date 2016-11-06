@@ -22,8 +22,17 @@ module.exports = {
 
   // on undo...
   down: function (queryInterface, Sequelize) {
-    // remove all instances of these fandoms from the table
-    return burger.destroy({where: {burger_name: not null}});
+    
+    //cleans database
+    return burger.destroy({where: {burger_name: {$ne: null}}})
+
+    // burger.findAll()
+
+    // .then(function(data){
+    //   var allBurgers = { burgers: data };
+    //   return allBurgers.destroy();
+    // })
+
   }
 };
 
