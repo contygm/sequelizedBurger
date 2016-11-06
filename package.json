@@ -1,5 +1,5 @@
 {
-  "name": "burger",
+  "name": "sequelizedBurger",
   "version": "1.0.0",
   "description": "2nd fullstack app",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contygm/Burger.git"
+    "url": "git+https://github.com/contygm/sequelizedBurger"
   },
   "keywords": [
     "bacon",
@@ -18,9 +18,9 @@
   "author": "genc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/contygm/Burger/issues"
+    "url": "https://github.com/contygm/sequelizedBurger/issues"
   },
-  "homepage": "https://github.com/contygm/Burger#readme",
+  "homepage": "https://github.com/contygm/sequelizedBurger#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
