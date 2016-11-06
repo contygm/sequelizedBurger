@@ -1,8 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var Sequelize = require('sequelize');
+var models  = require('./models');
 
 var app = express();
+var sequelizeConnection = models.sequelize;
+
+sequelizeConnection.sync({force:true})
 
 app.use(express.static(process.cwd() || __dirname + '/public'));
 
@@ -24,7 +29,7 @@ var routes = require('./controllers/burgers_controller.js');
 
 var models = require('./models');
 
-models.sequelize.sync({force:true})
+
 
 app.use('/', routes);
 

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var burger = require('../models/burger.js');
+var burger = require('../models')['Burger'];
 
 router.get('/', function (req, res) {
 	res.redirect('/burgers');
@@ -8,7 +8,9 @@ router.get('/', function (req, res) {
 
 router.get('/burgers', function (req, res) {
 	
-	burger.findAll({}, function(data){
+	burger.findAll()
+
+	.then(function(data){
 		var allBurgers = { burgers: data };
 		res.render('index', allBurgers);
 	})
