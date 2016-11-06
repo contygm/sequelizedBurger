@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var burger = require('../models/burger.js');
-var sequelizeConnection = models.sequelize
 
 router.get('/', function (req, res) {
 	res.redirect('/burgers');
@@ -25,13 +24,12 @@ router.post('/burgers/insert', function(req, res){
 	})
 })
 
-// TODO
 router.put('/burgers/update/:id', function(req, res){
 	var id = req.params.id;
 
 	burger.update({
 		devoured: true }, {
-		fields: ['title']
+		fields: ['title'],
 		where: {id: id}
 	})
 
