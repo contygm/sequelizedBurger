@@ -31,7 +31,7 @@ router.put('/burgers/update/:id', function(req, res){
 
 	burger.update({
 		devoured: true }, {
-		fields: ['title'],
+		fields: ['devoured'],
 		where: {id: id}
 	})
 

@@ -7,7 +7,7 @@ var models  = require('./models');
 var app = express();
 var sequelizeConnection = models.sequelize;
 
-sequelizeConnection.sync({force:true})
+sequelizeConnection.sync()
 
 app.use(express.static(process.cwd() || __dirname + '/public'));
 
