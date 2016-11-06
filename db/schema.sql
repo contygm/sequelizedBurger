@@ -9,5 +9,3 @@ CREATE TABLE burgers
 	`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
-
---sequelize model:create --name burgers --attributes "burgerName:[type:string],devoured: [type:BOOLEAN], entryDate:[type:date]"
