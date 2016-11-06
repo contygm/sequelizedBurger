@@ -24,14 +24,7 @@ module.exports = {
   down: function (queryInterface, Sequelize) {
     
     //cleans database
-    return burger.destroy({where: {burger_name: {$ne: null}}})
-
-    // burger.findAll()
-
-    // .then(function(data){
-    //   var allBurgers = { burgers: data };
-    //   return allBurgers.destroy();
-    // })
+    return burger.destroy({where: {burger_name: {$ne: null}}, truncate: true})
 
   }
 };
