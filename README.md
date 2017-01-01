@@ -10,6 +10,7 @@ A burger menu application with a MySQL database. Add a burger, devour a burger a
 * Express
 * Node
 * MySQL
+* Bootstrap
 * Handlebars
 * JSON
 * CLI
